@@ -28,17 +28,15 @@ public class Enigma{
         {
             char c = message.charAt(i);
 
-            // Pass through rotors in reverse order
+             // outer to middle 
             int index = rotors[2].indexOf(c);
-            c = rotors[2].charAt(index);
-
-            index = rotors[1].indexOf(c);
-            c = rotors[1].charAt(index);
-
-            index = rotors[0].indexOf(c);
-            c = rotors[0].charAt(index);
-
-            result += c;
+            char s = rotors[1].charAt(index);
+ 
+             // outer to inner
+            index = rotors[2].indexOf(s);
+            char de = rotors[0].charAt(index);
+ 
+            result += de;
 
             // Rotate after each character
             rotate();
@@ -57,17 +55,15 @@ public class Enigma{
         {
             char c = message.charAt(i);
 
-            // Pass through rotors in order
+            // inner to outer 
             int index = rotors[0].indexOf(c);
-            c = rotors[0].charAt(index);
+            char s = rotors[2].charAt(index);
 
-            index = rotors[1].indexOf(c);
-            c = rotors[1].charAt(index);
+            // middle to outer 
+            index = rotors[1].indexOf(s);
+            char en = rotors[2].charAt(index);
 
-            index = rotors[2].indexOf(c);
-            c = rotors[2].charAt(index);
-
-            result += c;
+            result += en;
 
             // Rotate after each character
             rotate();
