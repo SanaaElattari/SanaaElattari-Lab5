@@ -38,7 +38,7 @@ public class Enigma{
  
             result += de;
 
-            // Rotate after each character
+            // Rotate after each charchter 
             rotate();
         }
         return result;

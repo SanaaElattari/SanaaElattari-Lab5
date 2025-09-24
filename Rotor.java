@@ -21,11 +21,11 @@ public class Rotor {
 
         if (rotorValues.charAt(0) == startChar) 
         {
-            return true;
+            return true; // if at starting position return ture 
         } 
         else 
         {
-            return false;
+            return false; // otherwise return false
         }
     }
     
@@ -33,13 +33,13 @@ public class Rotor {
     public int indexOf(char c){
         //TODO
 
-        return rotorValues.indexOf(c);
+        return rotorValues.indexOf(c); // return index of char c
     }
 
     public char charAt(int idx){
         //TODO
 
-        return rotorValues.charAt(idx);
+        return rotorValues.charAt(idx); // return char at index idx
     }
 }
     
