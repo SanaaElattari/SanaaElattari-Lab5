@@ -22,7 +22,28 @@ public class Enigma{
     public String decrypt(String message){        
         //TODO
 
+        String result = "";
 
+        for (int i = 0; i < message.length(); i++) 
+        {
+            char c = message.charAt(i);
+
+            // Pass through rotors in reverse order
+            int index = rotors[2].indexOf(c);
+            c = rotors[2].charAt(index);
+
+            index = rotors[1].indexOf(c);
+            c = rotors[1].charAt(index);
+
+            index = rotors[0].indexOf(c);
+            c = rotors[0].charAt(index);
+
+            result += c;
+
+            // Rotate after each character
+            rotate();
+        }
+        return result;
     }
 
 
@@ -30,8 +51,28 @@ public class Enigma{
     public String encrypt(String message){
         //TODO
 
+        String result = "";
 
-        
+        for (int i = 0; i < message.length(); i++) 
+        {
+            char c = message.charAt(i);
+
+            // Pass through rotors in order
+            int index = rotors[0].indexOf(c);
+            c = rotors[0].charAt(index);
+
+            index = rotors[1].indexOf(c);
+            c = rotors[1].charAt(index);
+
+            index = rotors[2].indexOf(c);
+            c = rotors[2].charAt(index);
+
+            result += c;
+
+            // Rotate after each character
+            rotate();
+        }
+        return result;
     }
 
     
